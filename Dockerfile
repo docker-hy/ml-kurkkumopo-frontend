@@ -1,10 +1,10 @@
-FROM node:8.9.4
+FROM node:12.16.2
 
-RUN mkdir -p /usr/src/app
-COPY . /usr/src/app
 WORKDIR /usr/src/app
 
-RUN npm i
+COPY . .
+
+RUN npm ci
 
 RUN npm run build
 RUN npm install -g serve

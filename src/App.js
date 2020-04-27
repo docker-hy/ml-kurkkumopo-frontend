@@ -20,7 +20,7 @@ export default class App extends Component {
 
   uploadHandler = () => {
     if (!this.state.selectedFile) {
-      return 
+      return
     }
     const formData = new FormData()
     formData.append('img', this.state.selectedFile, this.state.selectedFile.name)
@@ -57,7 +57,10 @@ export default class App extends Component {
             <Image src={'https://react.semantic-ui.com/images/wireframe/image.png'} />
           }
           <span>
-            <Input type="file" onChange={this.fileChangedHandler} icon={<Icon name='upload' inverted circular link  onClick={this.uploadHandler} disabled={!this.state.mopoChance} />} />
+            <Input
+              type="file"
+              onChange={this.fileChangedHandler}
+              icon={<Icon name='upload' inverted circular link onClick={this.uploadHandler} disabled={!this.state.selectedFile} />} />
           </span>
           {this.state.mopoChance ? this.state.mopoChance >= 0.5 ?
             <h1>{(this.state.mopoChance * 100).toFixed(2)}% sure this is a moped</h1> :
