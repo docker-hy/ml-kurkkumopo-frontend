@@ -66,7 +66,13 @@ export default class App extends Component {
             <h1>{(this.state.mopoChance * 100).toFixed(2)}% sure this is a moped</h1> :
             <h1>{((1 - this.state.mopoChance) * 100).toFixed(2)}% sure this is a cucumber</h1>
             : ''}</div>
+          <hr/>
+          <p>This model can be pretty stupid, especially if you get unlucky with the training.
+            Don't worry if you get results that don't make sense, the important thing is that you get something. 
+            Feel free to try to re-train to maybe get better results =). 
+            P.S. this is not the way to operate models in production, if you want more information on how to do this properly see <a href="https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning">here.</a></p>
       </Segment>
+      
     )
   }
 }
